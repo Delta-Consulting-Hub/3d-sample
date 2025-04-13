@@ -105,7 +105,7 @@ model-viewer {
   font-size: 16px;
   width: 100%;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: ease 0.3s;
 }
 
 .info-box button:hover {
@@ -156,6 +156,23 @@ model-viewer {
 .project-right strong {
   font-weight: bold;
   font-size: 25px;
+}
+
+.project-right button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+
+.project-right button:hover {
+  background-color: #218838;
 }
 
 /* 🔵 TWO COLUMN BOXES */
