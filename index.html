@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Kohinoor Villa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <!-- 🔵 HEADER + 3D SECTION -->
+  <div class="background-overlay">
+    <div class="header">
+      <h1>Delta Consulting</h1>
+      <p>Your Home, Our Responsibility</p>
+    </div>
+    
+    <div class="content-container">
+      <!-- 3D Viewer -->
+      <div class="model-viewer-box">
+        <model-viewer 
+          id="modelViewer"
+          src="home.glb"
+          alt="3D Villa"
+          auto-rotate
+          camera-controls
+          ar
+          shadow-intensity="1"
+          autoplay
+          exposure="1"
+        ></model-viewer>
+      </div>
+      
+
+      <!-- Info Box -->
+      <div class="info-box">
+        <p><strong>Name:</strong> The Kohinoor Villa</p>
+        <p><strong>Location:</strong> Pimpri, Pune city</p>
+        <p><strong>Price:</strong> $10 Million</p>
+        <p><strong>Area:</strong> 1200 - 2500 sq. ft.</p>
+        <p><strong>Type:</strong> Residential Apartment</p>
+        <p><strong>Specialty:</strong> Swimming pool</p>
+        <div id="space"></div>
+        <button id="fullscreenBtn">Full-Screen View</button>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- 🔵 PROJECT OVERVIEW SECTION -->
+  <div class="project-section">
+    <div class="project-content">
+      <!-- LEFT: 2D PLAN IMAGE -->
+      <div class="project-left">
+        <!-- Replace URL below with your 2D plan -->
+        <img src="2D plan.png" alt="2D Floor Plan" />
+      </div>
+
+      <!-- RIGHT: PROJECT INFO -->
+      <div class="project-right">
+        <h2>Project Overview</h2>
+        <p><strong>Project Phase:</strong> Under Construction</p>
+        <p><strong>Floor Configuration:</strong> 3BHK + Study</p>
+        <p><strong>Total Floors:</strong> Ground + 2</p>
+        <p><strong>Built-up Area:</strong> 2150 sq. ft.</p>
+        <p><strong>Carpet Area:</strong> 1650 sq. ft.</p>
+        <p><strong>Facing:</strong> East</p>
+        <p><strong>Additional Features:</strong> Balcony, Modular Kitchen</p>
+        <p><strong>Approvals:</strong> RERA & PMC Approved</p>
+        <div id="space"></div>
+        <button id="locationbtn">Project Location</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔵 BOTTOM TWO COLUMN INFO -->
+    <div class="two-column">
+      <div class="column-box">
+        <h3>Room Details</h3>
+        <p><strong>◇ Bedrooms:</strong>  3</p>
+        <p><strong>◇ Bathrooms:</strong>  3 (attached with bedroom)</p>
+        <p><strong>◇ Living Room:</strong>  Spacious, dining area</p>
+        <p><strong>◇ Kitchen:</strong>  Modular with utility space</p>
+        <p><strong>◇ Balconies:</strong>  2+ (great vetilation)</p>
+      </div>
+      <div class="column-box">
+        <h3>Key Hightlights</h3>
+        <p>◇ Efficient space distribution.</p>
+        <p>◇ Natural light in all rooms.</p>
+        <p>◇ Attached baths for master rooms.</p>
+        <p>◇ Dining in the centre - perfect for family interaction.</p>
+        <p>◇ Seperated utility and storage zones.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <p>© 2025 Delta Consulting. All rights reserved.</p>
+</footer>
+
+
+  <!-- ✅ JavaScript for Fullscreen -->
+  <script>
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const modelViewer = document.getElementById('modelViewer');
+
+    fullscreenBtn.addEventListener('click', () => {
+      if (modelViewer.requestFullscreen) {
+        modelViewer.requestFullscreen();
+      } else if (modelViewer.webkitRequestFullscreen) {
+        modelViewer.webkitRequestFullscreen();
+      } else if (modelViewer.msRequestFullscreen) {
+        modelViewer.msRequestFullscreen();
+      } else {
+        alert("Fullscreen not supported in this browser.");
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (document.fullscreenElement && e.key === "Escape") {
+        document.exitFullscreen();
+      }
+    });
+
+    document.getElementById('locationbtn').addEventListener('click', () => {
+  window.open('https://maps.app.goo.gl/4WE521J83DYbqgqU9', '_blank'); 
+});
+
+  </script>
+</body>
+</html>
